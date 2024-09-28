@@ -25,11 +25,12 @@ prior_bracket_taxes = [(income_per_bracket[0] * tax_per_bracket[0]),
 
 interest = {
     "credit": 1.3,
-    "investment": 1.1
+    "investment": 1.1,
+    "student loans": 1.05
 }
 
 class Player:
-    def __init__(self, job, salary, credit_score):
+    def __init__(self, job, salary, credit_score, student_loans):
         self.set_logged_in(False)
         self.set_job(job)
         self.set_salary(salary)
@@ -37,6 +38,7 @@ class Player:
         self.set_debt(0)
         self.set_investment_account(0)
         self.set_credit_score(credit_score)
+        self.set_student_loans(student_loans)
         self.set_taxes(salary)
         self.set_monthly_income()
         self.set_monthly_taxes()
@@ -83,6 +85,12 @@ class Player:
 
     def set_credit_score(self, credit_score):
         self.__credit_score = credit_score
+
+    def get_student_loans(self):
+        return self.__student_loans
+
+    def set_student_loans(self, debt):
+        self.__student_loans = debt
     
     def get_taxes(self):
         return self.__taxes
@@ -175,6 +183,12 @@ class Player:
     def investment_accrual(self):
         self.set_investment_account(self.get_investment_account() * interest["investment"])
 
+    def student_loans_transaction(self, money):
+        self.set_student_loans(self.get_student_loans() + money)
+
+    def student_loans_accrual(self):
+        self.set_student_loans(self.get_student_loans() * interest["student loans"])
+
     def round_start_routine(self):    
         self.bank_transaction(self.get_monthly_income())
 
@@ -186,4 +200,5 @@ def start_game(players):
                 you pay {round(player.get_monthly_taxes(), 2)} in taxes, thus your income is {player.get_monthly_income()} per month \n
                 you have {player.get_bank()} in bank \n your credit score is {player.get_credit_score()} \n 
                 you have {player.get_debt()} debt \n your credit limit is {player.get_credit_limit()} \n
-                you have {player.get_investment_account()} money invested \n \n""")
+                you have {player.get_investment_account()} money invested \n
+                you have {player.get_student_loans()} in student loans \n \n""")
