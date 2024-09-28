@@ -13,3 +13,15 @@ Nice to Haves:
 - Impact of Financial Choices ( Reckless Spending has Consequences )
 - Investing
 - Specific Scenarios of Debt ( e.g Student Loans )
+
+Hardware:
+- RFID card allows you to spend line of credit or debit
+- LCD screen displays current balance
+- UI transactions are updated on UI
+
+User Interface:
+- login credentials for teacher and student
+- 2D avatar
+- randomized money amount
+- randomized role (nice to have: with abilities, otherwise related to avatar)
+
