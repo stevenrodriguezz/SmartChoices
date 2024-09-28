@@ -7,3 +7,5 @@ Player3 = Player("Grocer", 15000)
 players = [Player1, Player2, Player3]
 
 start_game(players)
+
+print(Player1.get_logged_in())

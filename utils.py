@@ -30,6 +30,14 @@ class Player:
         self.set_bank(0)
         self.set_taxes(salary)
         self.set_monthly_income()
+        self.set_monthly_taxes()
+        self.set_logged_in(False)
+
+    def get_logged_in(self):
+        return self.__logged_in
+
+    def set_logged_in(self, is_logged_in):
+        self.__logged_in = is_logged_in
 
     def get_job(self):
         return self.__job
@@ -89,11 +97,18 @@ class Player:
     def set_monthly_income(self):
         self.__monthly_income = round(((self.get_salary() - self.get_taxes()) / 12), 2)
 
+    def get_monthly_taxes(self):
+        return self.__monthly_taxes
+
+    def set_monthly_taxes(self):
+        self.__monthly_taxes = round(((self.get_taxes()) / 12), 2)
+
     job = property(get_job, set_job)
     salary = property(get_salary, set_salary)
     bank = property(get_bank, set_bank)
     taxes = property(get_taxes, set_taxes)
     monthly_income = property(get_monthly_income, set_monthly_income)
+    monthly_taxes = property(get_monthly_taxes, set_monthly_taxes)
 
     def bank_transaction(self, money):
         self.set_bank(self.get_bank() + money)
@@ -106,5 +121,5 @@ def start_game(players):
     for player in players:
         player.round_start_routine()
         print(f"""Your job is {player.get_job()} \n your salary is {player.get_salary()} so you make {round(player.get_salary() / 12, 2)} per month \n
-                you pay {round(player.get_taxes() / 12, 2)} in taxes, thus your income is {player.get_monthly_income()} per month \n
+                you pay {round(player.get_monthly_taxes(), 2)} in taxes, thus your income is {player.get_monthly_income()} per month \n
                 you have {player.get_bank()} in bank \n \n""")
