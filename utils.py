@@ -196,9 +196,9 @@ class Player:
 def start_game(players):
     for player in players:
         player.round_start_routine()
-        print(f"""Your job is {player.get_job()} \n your salary is {player.get_salary()} so you make {round(player.get_salary() / 12, 2)} per month \n
-                you pay {round(player.get_monthly_taxes(), 2)} in taxes, thus your income is {player.get_monthly_income()} per month \n
-                you have {player.get_bank()} in bank \n your credit score is {player.get_credit_score()} \n 
-                you have {player.get_debt()} debt \n your credit limit is {player.get_credit_limit()} \n
-                you have {player.get_investment_account()} money invested \n
-                you have {player.get_student_loans()} in student loans \n \n""")
+        # print(f"""Your job is {player.get_job()} \n your salary is {player.get_salary()} so you make {round(player.get_salary() / 12, 2)} per month \n
+        #         you pay {round(player.get_monthly_taxes(), 2)} in taxes, thus your income is {player.get_monthly_income()} per month \n
+        #         you have {player.get_bank()} in bank \n your credit score is {player.get_credit_score()} \n 
+        #         you have {player.get_debt()} debt \n your credit limit is {player.get_credit_limit()} \n
+        #         you have {player.get_investment_account()} money invested \n
+        #         you have {player.get_student_loans()} in student loans \n \n""")
