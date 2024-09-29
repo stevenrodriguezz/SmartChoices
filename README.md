@@ -1,7 +1,6 @@
 # SmartChoices
-Smart Choices is an engaging educational game designed for high school students (grades 9-12) that teaches financial literacy and budgeting skills through real-life scenarios. 
+Smart Choices is an engaging educational game designed for high school students (grades 9-12) that teaches financial literacy and budgeting skills through real-life scenarios. It was made with the intention of promoting classroom socratic discussion of how everyday people might experience finances in a fun, engaging way.
 
-This game is meant to promote classroom socratic discussion of how everyday people might experience finances in a fun, engaging way
 
 **Topics covered:** 
 - Budgeting
@@ -28,14 +27,13 @@ This project is for Shell-hacks 2024, a hackathon sponsored by the INIT student 
 - Samuel - FIU B.S. Mechanical Engineering 2024
 
 **Technology Used:**
-- Python
-- Streamlit
-- Git
+- Python ( Programming Language )
+- Streamlit ( Frontend Development for UI )
+- Git, Github, WSL
 
 **CS Subjects Covered:**
 - Data structures
-- Object Oriented programming
-- Programming Languages
+- Object Oriented Programming
 
 **How does it work?**
 *User Interface:*
@@ -49,7 +47,7 @@ This project is for Shell-hacks 2024, a hackathon sponsored by the INIT student 
 - Students will also have to try to diminish a stress score and raise a happiness score per round
 - The teacher can monitor student activities, change their roles, and mediate classroom discussions
 
-*Future V2:*
+**Future V2:**
 Hardware
 - RFID card allows you to spend line of credit or debit
 - LCD screen displays current balance and updates with transactions
