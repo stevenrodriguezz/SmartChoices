@@ -11,8 +11,8 @@ def page2():
     st.write("Verification Step: Please Log-in:")
 
 def page3():
-    st.title("Session Selection")
-    st.write("Please Enter the Room ID to join a game")
+    st.title("Lobby Key")
+    st.write("Please Enter Lobby Key to join a game")
 
 def page4():
     st.title("New Game or Continuation?")
@@ -27,28 +27,41 @@ def page6():
     st.title(f"Lobby     Key: {key}")
     st.write("wait for students to join your game")
 
+def page8():
+    st.title('Welcome to Your Dashboard')
+    st.write("Your Occupation is:")
+    st.write("Your Income is:")
+    st.write('Your Credit Score is:')
+    st.image("/home/stevenchurro/SmartChoices/avatars/business-woman-wearing-hard-hat-glasses-3d-rendering.jpg")
+
+
 # Initialize session state for navigation if not already set
 if 'page' not in st.session_state:
     st.session_state.page = 'home'
 
 # Define functions to change the page
-def go_to_page6():
-    st.session_state.page = 'page6'
 
-def go_to_page5():
-    st.session_state.page = 'page5'
-
-def go_to_page4():
-    st.session_state.page = 'page4'
-
-def go_to_page3():
-    st.session_state.page = 'page3'
+def go_to_home():
+    st.session_state.page = 'home'
 
 def go_to_page2():
     st.session_state.page = 'page2'
 
-def go_to_home():
-    st.session_state.page = 'home'
+def go_to_page3():
+    st.session_state.page = 'page3'
+
+def go_to_page4():
+    st.session_state.page = 'page4'
+
+def go_to_page5():
+    st.session_state.page = 'page5'
+
+def go_to_page6():
+    st.session_state.page = 'page6'
+
+def go_to_page8():
+    st.session_state.page = 'page8'
+    
 
 # Render the selected page
 if st.session_state.page == 'home':
@@ -61,7 +74,8 @@ elif st.session_state.page == 'page2':
     go_to_page4()
 elif st.session_state.page == 'page3':
     page3()
-    room_id = st.text_input("Room ID")
+    lobby_key = st.text_input("Lobby Key")
+    go_to_page8()
 elif st.session_state.page == 'page4':
     page4()
     st.button('New Game', on_click=go_to_page5)
@@ -72,3 +86,6 @@ elif st.session_state.page == 'page5':
     go_to_page6()
 elif st.session_state.page == 'page6':
     page6()
+    st.button("Return Home", on_click = go_to_home)
+elif st.session_state.page == 'page8':
+    page8()
